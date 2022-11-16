@@ -51,3 +51,9 @@ class WebScraping():
             print('error')
         else:
             self.soup = soup
+
+    def move_page(self, url: str):
+        try:
+            self.browser.get(url)
+        except Exception:
+            print('error')
