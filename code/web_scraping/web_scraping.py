@@ -58,7 +58,7 @@ class WebScraping(webdriver.Chrome):
         else:
             self.soup = soup
 
-    def input_google_serch(self, keyword: str):
+    def google_serch_input(self, keyword: str):
         """Google検索入力
 
         Args:
@@ -67,11 +67,11 @@ class WebScraping(webdriver.Chrome):
         from selenium.webdriver.common.keys import Keys
         self.get("https://google.com/")
         time.sleep(2)
-        browser_from = self.find_element_by_class_name('gLFyf.gsfi')
+        browser_from = self.find_element_by_class_name('gLFyf')
         browser_from.send_keys(keyword)
         browser_from.send_keys(Keys.ENTER)
 
-    def get_google_list(self, page_count: int) -> list:
+    def google_get_list(self, page_count: int) -> list:
         """Google検索のリストを取得するメソッド
 
         Args:
@@ -111,7 +111,7 @@ class WebScraping(webdriver.Chrome):
                 time.sleep(2)
         return site_list
 
-    def collect_google_map_list(self, page_count: int = 10) -> list:
+    def google_collect_map_list(self, page_count: int = 10) -> list:
         """_summary_
 
         Args:
